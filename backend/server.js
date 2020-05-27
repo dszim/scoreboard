@@ -34,3 +34,11 @@ app.get('/', function(req, res){
     res.sendStatus(200);
 });
 
+/**
+ * list of contributors
+ * /contributors
+ * /contributors/:id
+ * 
+ *  */ 
+const contributorRouter = require('./routes/contributorRouter');
+app.use('/contributors', contributorRouter);
