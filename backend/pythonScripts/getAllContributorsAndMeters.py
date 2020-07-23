@@ -13,7 +13,7 @@ def sortit(e):
 
 def getUniqueContributorsByNameAndTotalMeters():
     collatedContributors = collection.aggregate([
-        {"$group": { "_id": "$name", "meters": { "$sum": "$distance" }, "count": { "$sum": 1 } }}
+        {"$group": { "_id": "$name", "meters": { "$sum": "$distance" }, "time": { "$sum": "$time" }, "count": { "$sum": 1 }}}
     ])
 
     rowerList = list(collatedContributors)

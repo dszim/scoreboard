@@ -24,21 +24,20 @@ connection.once('open', () => {
 app.use(cors());
 app.use(express.json())
 
-app.listen(port, () => console.log('Server is listening on port: ${port}'));
+app.listen(port, () => console.log(`Server is listening on port: ${port}`));
 
 // routes
-/*
-* index
-*/
+/**
+ * index
+ */
 app.get('/', function(req, res){ 
     res.sendStatus(200);
 });
 
 /**
- * list of contributors
  * /contributors
  * /contributors/:id
- * 
- *  */ 
+ * /contributors/totalmeters
+ */ 
 const contributorRouter = require('./routes/contributorRouter');
 app.use('/contributors', contributorRouter);
